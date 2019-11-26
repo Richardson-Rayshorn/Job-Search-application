@@ -1,0 +1,23 @@
+{
+  "name": "jobsearch",
+  "version": "1.0.0",
+  "description": "A job Search application that allows users to apply for jobs and post jobs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jobsearch",
+    "jobs",
+    "jobposting"
+  ],
+  "author": "Rayshorn Richardson",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}
