@@ -16,9 +16,7 @@ app.get('/', (req, res) =>
     res.end();
 });
 
-app.get('/listJobs', listJobsFunc);
-
-function listJobsFunc (req, res)
+app.get('/listJobs', (req, res) => 
 {
     // res.write("Testing");
     // console.log("test");
@@ -33,7 +31,7 @@ function listJobsFunc (req, res)
         res.render('jobs', {result});
         res.end();
     });
-}
+});
 
 function getJobs(callback) 
 {
