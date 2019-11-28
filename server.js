@@ -28,7 +28,7 @@ function listJobsFunc (req, res)
         {
             console.log(err);
         }
-        console.log(result);
+        console.log(JSON.stringify(result));
     });
     res.end();
 }
