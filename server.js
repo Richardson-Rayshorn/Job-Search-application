@@ -35,7 +35,7 @@ function listJobsFunc (req, res)
 
 function getJobs(callback) 
 {
-    var sql = "SELECT title, description, salary FROM jobs";
+    var sql = "SELECT title, descriptions, salary FROM jobs";
 
     pool.query(sql, function(err, result) 
     {
