@@ -22,6 +22,7 @@ app.get('/listJobs', (req, res) =>
 
     getJobs((error, result) => 
     {
+        console.log("test");
         if(error)
         {
             console.log(error);
