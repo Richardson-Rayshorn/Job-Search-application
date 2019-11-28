@@ -29,10 +29,10 @@ function listJobsFunc (req, res)
         {
             console.log(err);
         }
+        console.log(JSON.stringify(result));
+        res.render('jobs', {result});
+        res.end();
     });
-    console.log(JSON.stringify(result));
-    res.render('jobs', {result});
-    res.end();
 }
 
 function getJobs(callback) 
