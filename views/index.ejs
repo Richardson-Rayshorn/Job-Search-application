@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Job Listing</h2>
-    <button onclick="listJobs()"></button>
+    <button onclick="listJobs()">List Available Jobs</button>
     <div id="displayJobs"></div>
     <script>
         function listJobs()
@@ -23,7 +23,7 @@
                 }
             }
 
-            xmlhttp.open("GET","/showmodalroute",true);
+            xmlhttp.open("GET","/listJobs",true);
             xmlhttp.send();
         }
     </script>
