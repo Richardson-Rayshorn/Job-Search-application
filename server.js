@@ -19,7 +19,7 @@ app.get('/', (req, res) =>
 app.get('/listJobs', (req, res) => 
 {
     res.write("Testing");
-
+    console.log("test");
     getJobs((error, result) => 
     {
         console.log("test");
