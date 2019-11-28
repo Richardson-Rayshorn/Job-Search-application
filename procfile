@@ -1,1 +1,1 @@
-web: node ./app/serverjs
+web: node app/serverjs

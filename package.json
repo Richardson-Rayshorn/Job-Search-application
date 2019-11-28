@@ -15,7 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^7.14.0"
   },
   "engines": {
     "node": "10.x"
