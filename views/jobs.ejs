@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<%- include('header') -%>
 <body>
     <h3>Jobs below</h3>
     <% for (var i =0; i < results.length; i++) { %>
-        <div>
-            <%= results[i].title %>
-            <%= results[i].descriptions %>
-            <%= results[i].salary %>
+        <div class="row">
+            <div class="col s12 m7">
+                <div class="card">
+                    <h4 class="card-title"><%= results[i].title %></h4>
+                    <p class="card-content"><%= results[i].descriptions %></p>
+                    <p class="card-content"><%= results[i].salary %></p>
+                </div>
+            </div>
         </div>
     <% } %>
 </body>
