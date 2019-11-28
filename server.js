@@ -30,6 +30,7 @@ function listJobsFunc (req, res)
         }
         console.log(JSON.stringify(result));
     });
+    res.render('jobs');
     res.end();
 }
 
