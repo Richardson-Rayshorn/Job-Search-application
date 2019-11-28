@@ -23,7 +23,7 @@ function listJobsFunc (req, res)
     res.write("Testing");
     // console.log("test");
     getJobs();
-    // res.end();
+    res.end();
 }
 
 function getJobs(callback) 
