@@ -20,7 +20,6 @@ app.get('/listJobs', listJobsFunc);
 
 function listJobsFunc (req, res)
 {
-    var result;
     // res.write("Testing");
     // console.log("test");
     getJobs((err, result) => 
@@ -30,6 +29,7 @@ function listJobsFunc (req, res)
             console.log(err);
         }
         console.log(JSON.stringify(result));
+        var result = JSON.parse(result);
         res.render('jobs', {result});
         res.end();
     });
