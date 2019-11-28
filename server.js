@@ -29,7 +29,7 @@ function listJobsFunc (req, res)
             console.log(err);
         }
         console.log(JSON.stringify(result));
-        var result = JSON.parse(result);
+        // var result = JSON.parse(result);
         res.render('jobs', {result});
         res.end();
     });
