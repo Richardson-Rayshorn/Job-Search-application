@@ -22,24 +22,30 @@ function listJobsFunc (req, res)
 {
     res.write("Testing");
     // console.log("test");
-    getJobs();
+    getJobs((err, result) => 
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        console.log(result);
+    });
     res.end();
 }
 
 function getJobs(callback) 
 {
-    // var sql = "SELECT title, description, salary FROM jobs";
+    var sql = "SELECT title, description, salary FROM jobs";
 
-    // pool.query(sql, function(err, result) 
-    // {
-    //     if(err)
-    //     {
-    //         console.log(err);
-    //     }
-    //     callback(null, result.rows);
-    // })
+    pool.query(sql, function(err, result) 
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        callback(null, result.rows);
+    })
 
-    console.log("testing callback");
 }
 
 app.listen(port);
