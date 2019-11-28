@@ -8,6 +8,24 @@
 </head>
 <body>
     <h2>Job Listing</h2>
-    
+    <button onclick="listJobs()"></button>
+    <div id="displayJobs"></div>
+    <script>
+        function listJobs()
+        {
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = () => 
+            {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    document.getElementById('displayJobs').innerHTML=xmlhttp.responseText;
+                }
+            }
+
+            xmlhttp.open("GET","/showmodalroute",true);
+            xmlhttp.send();
+        }
+    </script>
 </body>
 </html>
