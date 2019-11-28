@@ -27,7 +27,7 @@ app.get('/listJobs', (req, res) =>
         {
             console.log(error);
         }
-        console.log(JSON.stringify(result))
+        console.log(JSON.stringify(result));
     });
     res.end();
 });
