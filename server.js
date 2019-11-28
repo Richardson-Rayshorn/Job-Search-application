@@ -16,21 +16,15 @@ app.get('/', (req, res) =>
     res.end();
 });
 
-app.get('/listJobs', (req, res) => 
+app.get('/listJobs', listJobsFunc);
+
+function listJobsFunc (req, res)
 {
     res.write("Testing");
     // console.log("test");
-    getJobs((error, result) => 
-    {
-        console.log("test");
-        // if(error)
-        // {
-        //     console.log(error);
-        // }
-        // console.log(JSON.stringify(result));
-    });
-    res.end();
-});
+    getJobs();
+    // res.end();
+}
 
 function getJobs(callback) 
 {
@@ -44,6 +38,8 @@ function getJobs(callback)
     //     }
     //     callback(null, result.rows);
     // })
+
+    console.log("testing callback");
 }
 
 app.listen(port);
