@@ -8,5 +8,12 @@
 </head>
 <body>
     <h3>Jobs below</h3>
+    <% for (var i =0; i < results.length; i++) { %>
+        <div>
+            <%= results[i].title %>
+            <%= results[i].descriptions %>
+            <%= results[i].salary %>
+        </div>
+    <% } %>
 </body>
 </html>
