@@ -45,7 +45,27 @@ function getJobs(callback)
             console.log(err);
         }
         callback(null, result.rows);
-    })
+    });
+
+}
+
+app.get('/postJobs', (req, res) => 
+{
+
+});
+
+function postJobs(callback) 
+{
+    // var sql = "SELECT title, descriptions, salary FROM jobs";
+
+    // pool.query(sql, function(err, result) 
+    // {
+    //     if(err)
+    //     {
+    //         console.log(err);
+    //     }
+    //     callback(null, result.rows);
+    // })
 
 }
 
