@@ -1,0 +1,20 @@
+<%- include('header'); -%>
+
+<form method="POST" action="/postJobs">
+    <div class="row">
+        <div class="input-field col s6">
+            <input name="jobTitle" id="jobTitle" type="text" class="validate">
+            <label for="jobTitle">Job Title</label>
+        </div>
+        <div class="input-field col s6">
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Textarea</label>
+        </div>
+        <div class="input-field col s6">
+            <input name="Salary" id="jobDescription" type="text" class="validate">
+            <label for="jobDescription">Job Description</label>
+        </div>
+    </div>
+</form>
+
+<%- include('footer'); -%>
