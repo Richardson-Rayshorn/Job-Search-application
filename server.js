@@ -85,16 +85,16 @@ function postJobs(title,desc,salaries, callback)
 {
     var sql = "INSERT INTO jobs (title, descriptions, salary) VALUES (?,?,?)";
 
-    var values = [title, desc, salaries];
+    // var values = ;
 
-    pool.query(sql, values, function(err, result) 
+    pool.query(sql, [title, desc, salaries], function(err, result) 
     {
         if(err)
         {
             console.log(err);
         }
         callback(null, result);
-    })
+    });
 
 }
 
