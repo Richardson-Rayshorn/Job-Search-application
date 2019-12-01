@@ -83,7 +83,7 @@ app.post('/postJobs', (req, res) =>
 
 function postJobs(title,desc,salaries, callback) 
 {
-    var sql = `INSERT INTO jobs (title, descriptions, salary) VALUES ($1,$2,$3)`;
+    var sql = "INSERT INTO jobs (title, descriptions, salary) VALUES ($1,$2,$3)";
 
     var values = [title, desc, salaries];
 
