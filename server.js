@@ -61,9 +61,7 @@ app.post('/postJobs', (req, res) =>
    var title = req.body.jobTitle;
    var desc = req.body.jobDescription;
    var salary = req.body.salary;
-   var terms = req.body.payment;
-
-   var salaries = "$" + salary + " per " + terms;
+   var salaries = "$" + salary + " per month";
 
    postJobs(title,desc,salaries, (err, result) => 
    {
