@@ -58,7 +58,7 @@ app.get('/post', (req, res) =>
 
 app.post('/postJobs', (req, res) => 
 {
-   var title = req.body.title;
+//    var title = req.body.title;
    var desc = req.body.desc;
    var salary = req.body.salary;
    var salaries = "$" + salary + " per month";
