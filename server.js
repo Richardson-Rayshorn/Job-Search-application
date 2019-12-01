@@ -68,33 +68,33 @@ app.post('/postJobs', (req, res) =>
    var salaries = "$" + salary + " per month";
 
    console.log(title, desc, salary);
-   res.write("testing");
-   res.end();
-//    postJobs(title,desc,salaries, (err, result) => 
-//    {
-//         if(err)
-//         {
-//             console.log(err);
-//         }
+//    res.write("testing");
+//    res.end();
+   postJobs(title,desc,salaries, (err, result) => 
+   {
+        if(err)
+        {
+            console.log(err);
+        }
 
-//         console.log(result);
-//    });
+        console.log(result);
+   });
 });
 
-// function postJobs(title,desc,salaries, callback) 
-// {
-//     var sql = "INSERT INTO jobs (title, descriptions, salary) VALUES ?";
+function postJobs(title,desc,salaries, callback) 
+{
+    var sql = "INSERT INTO jobs (title, descriptions, salary) VALUES ?";
 
-//     pool.query(sql,[title,desc,salaries], function(err, result) 
-//     {
-//         if(err)
-//         {
-//             console.log(err);
-//         }
-//         callback(null, result);
-//     })
+    pool.query(sql,[title,desc,salaries], function(err, result) 
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        callback(null, result);
+    })
 
-// }
+}
 
 app.listen(port);
 console.log("testing the server");
