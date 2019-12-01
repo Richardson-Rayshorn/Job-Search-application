@@ -52,7 +52,8 @@ function getJobs(callback)
 
 app.get('/postJobs', (req, res) => 
 {
-
+    res.render('postjobs');
+    res.end();
 });
 
 function postJobs(callback) 
