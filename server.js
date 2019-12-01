@@ -64,6 +64,8 @@ app.post('/postJobs', (req, res) =>
    var salaries = "$" + salary + " per month";
 
    console.log(title, desc, salary);
+   res.write("testing");
+   res.end();
 //    postJobs(title,desc,salaries, (err, result) => 
 //    {
 //         if(err)
