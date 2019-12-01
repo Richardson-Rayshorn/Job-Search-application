@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    $('select').formSelect();
+  });
+  
 function listJobsPage()
 {
     var xmlhttp = new XMLHttpRequest();
