@@ -9,9 +9,19 @@
             <textarea name="jobDescription" id="jobDescription" class="materialize-textarea"></textarea>
             <label for="jobDescription">Job Description</label>
         </div>
-        <div class="input-field col s12">
-            <input name="salary" id="salary" type="text" class="validate">
-            <label for="salary">Salary</label>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="salary" id="salary" type="text" class="validate">
+                <label for="salary">Salary</label>
+            </div>
+            <div class="input-field col s12">
+                <select name="payment">
+                    <option value="" disabled selected>Monthly or Yearly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+                <label>Choose payment terms</label>
+            </div>
         </div>
     </div>
     <input type="submit">

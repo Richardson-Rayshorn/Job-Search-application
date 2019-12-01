@@ -50,24 +50,44 @@ function getJobs(callback)
 
 }
 
-app.get('/postJobs', (req, res) => 
+app.get('/post', (req, res) => 
 {
     res.render('postjobs');
     res.end();
 });
 
-function postJobs(callback) 
+app.post('/postJobs', (req, res) => 
 {
-    // var sql = "SELECT title, descriptions, salary FROM jobs";
+   var title = req.body.jobTitle;
+   var desc = req.body.jobDescription;
+   var salary = req.body.salary;
+   var terms = req.body.payment;
 
-    // pool.query(sql, function(err, result) 
-    // {
-    //     if(err)
-    //     {
-    //         console.log(err);
-    //     }
-    //     callback(null, result.rows);
-    // })
+   var salaries = "$" + salary + " per " + terms;
+
+   postJobs(title,desc,salaries, (err, result) => 
+   {
+        if(err)
+        {
+            console.log(err);
+        }
+
+        console.log(result);
+   });
+});
+
+function postJobs(title,desc,salaries, callback) 
+{
+    var sql = "INSERT INTO jobs (title, descriptions, salary) VALUES ?";
+
+    pool.query(sql,[title,desc,salaries], function(err, result) 
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        callback(null, result);
+    })
 
 }
 
