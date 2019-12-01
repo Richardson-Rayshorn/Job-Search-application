@@ -83,11 +83,11 @@ app.post('/postJobs', (req, res) =>
 
 function postJobs(title,desc,salaries, callback) 
 {
-    var sql = "INSERT INTO jobs (title, descriptions, salary) VALUES ?";
+    var sql = "INSERT INTO jobs (title, descriptions, salary) VALUES (?,?,?)";
 
     var values = [title, desc, salaries];
 
-    pool.query(sql, [values], function(err, result) 
+    pool.query(sql, values, function(err, result) 
     {
         if(err)
         {
