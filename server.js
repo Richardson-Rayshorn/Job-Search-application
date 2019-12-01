@@ -63,15 +63,16 @@ app.post('/postJobs', (req, res) =>
    var salary = req.body.salary;
    var salaries = "$" + salary + " per month";
 
-   postJobs(title,desc,salaries, (err, result) => 
-   {
-        if(err)
-        {
-            console.log(err);
-        }
+   console.log(title, desc, salary);
+//    postJobs(title,desc,salaries, (err, result) => 
+//    {
+//         if(err)
+//         {
+//             console.log(err);
+//         }
 
-        console.log(result);
-   });
+//         console.log(result);
+//    });
 });
 
 function postJobs(title,desc,salaries, callback) 
