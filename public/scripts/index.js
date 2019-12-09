@@ -50,3 +50,23 @@ function listJobs()
     xmlhttp.open("GET","/listJobs",true);
     xmlhttp.send();
 }
+
+function acceptJobs(e)
+{
+    var title = document.getElementById("title").value;
+    var desc = document.getElementById("descriptions").value;
+    var sal = document.getElementById("salary").value;
+    console.log(title + " " + desc + " " + sal);
+    // var xmlhttp = new XMLHttpRequest();
+
+    // xmlhttp.onreadystatechange = () => 
+    // {
+    //     if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    //     {
+    //         document.getElementById('displayJobs').innerHTML=xmlhttp.responseText;
+    //     }
+    // }
+
+    // xmlhttp.open("GET","/listJobs",true);
+    // xmlhttp.send();
+}

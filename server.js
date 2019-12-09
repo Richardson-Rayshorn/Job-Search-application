@@ -98,5 +98,10 @@ function postJobs(title,desc,salaries, callback)
 
 }
 
+app.post('/accept', (req, res) => 
+{
+
+});
+
 app.listen(port);
 console.log("testing the server");

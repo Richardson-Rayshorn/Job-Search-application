@@ -1,12 +1,17 @@
-<body>
     <h3>Jobs below</h3>
     <div class="row">
         <% for (var i =0; i < results.length; i++) { %>
                 <div class="col s12 m12 l12">
                     <div class="card">
-                        <h4 class="card-title"><%= results[i].title %></h4>
-                        <p class="card-content"><%= results[i].descriptions %></p>
-                        <p class="card-content"><%= results[i].salary %></p>
+                        <form method="POST" action="">
+                            <h4 class="card-title"><%= results[i].title %></h4>
+                            <input id="title" type="hidden" name="title" value="<%= results[i].title %>"/>
+                            <p class="card-content"><%= results[i].descriptions %></p>
+                            <textarea id="descriptions" hidden name="descriptions" value="<%= results[i].descriptions %>"></textarea>
+                            <p class="card-content"><%= results[i].salary %></p>
+                            <input id="salary" type="hidden" name="salary" value="<%= results[i].salary %>"/>
+                            <button type="submit" class="btn" onclick="acceptJobs(this)">Accept Job</button>
+                        </form>
                     </div>
                 </div>
             
