@@ -1,9 +1,18 @@
-CREATE TABLE jobs 
+CREATE TABLE accepts 
 (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     descriptions TEXT NOT NULL,
     salary VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE jobs 
+(
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    descriptions TEXT NOT NULL,
+    salary VARCHAR(255) NOT NULL,
+    accept_id INTEGER REFERENCES accepts
 );
 
 INSERT INTO jobs (title, descriptions, salary) VALUES
@@ -26,3 +35,4 @@ INSERT INTO jobs (title, descriptions, salary) VALUES
 (
     'Cashier', 'Honest person and Police Records', '$800 a month'
 );
+
