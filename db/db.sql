@@ -1,9 +1,7 @@
 CREATE TABLE accepts 
 (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    descriptions TEXT NOT NULL,
-    salary VARCHAR(255) NOT NULL
+    accepted BOOLEAN,
 );
 
 CREATE TABLE jobs 

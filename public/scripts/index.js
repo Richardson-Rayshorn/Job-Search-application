@@ -11,7 +11,7 @@ function listJobsPage()
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
-            document.getElementById('app').innerHTML=xmlhttp.responseText;
+            document.getElementsByTagName('body').innerHTML=xmlhttp.responseText;
         }
     }
 
