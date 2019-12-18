@@ -101,7 +101,8 @@ function postJobs(title,desc,salaries, callback)
 
 app.post('/accept', (req, res) => 
 {
-    var jobId = req.params.jobid;
+    console.log(req.body.jobid);
+    var jobId = req.body.jobid;
     var acceptId;
     acceptCreate((err, results) => 
     {
