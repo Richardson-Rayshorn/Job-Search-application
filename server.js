@@ -101,8 +101,38 @@ function postJobs(title,desc,salaries, callback)
 
 app.post('/accept', (req, res) => 
 {
+    var jobId = req.body.id;
 
+    acceptCreate((err, results) => 
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        console.log(JSON.stringify(results));
+        var acceptResult = JSON.parse(JSON.stringify(results));
+
+        // for (var i = 0;)
+        // updateJobAccept((err, result) => 
+        // {
+
+        // });
+    });
 });
+
+function acceptCreate(callback)
+{
+    var sql = "INSERT INTO accepts (accepted) VALUES (TRUE)";
+    sql += "SELECT id from accepts ORDER_BY id DESC LIMIT 1";
+    pool.query(sql, (err, results) =>
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        callback(err, results);
+    });
+}
 
 app.listen(port);
 console.log("testing the server");

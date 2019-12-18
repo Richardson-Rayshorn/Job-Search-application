@@ -3,7 +3,7 @@
         <% for (var i =0; i < results.length; i++) { %>
                 <div class="col s12 m12 l12">
                     <div class="card">
-                        <form method="" action="">
+                        <form method="POST" action="/accept">
                             <h4 class="card-title"><%= results[i].title %></h4>
                             <p class="card-content"><%= results[i].descriptions %></p>
                             <p class="card-content">$<%= results[i].salary %> per month</p>
