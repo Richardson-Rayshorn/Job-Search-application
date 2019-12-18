@@ -102,7 +102,7 @@ function postJobs(title,desc,salaries, callback)
 app.post('/accept', (req, res) => 
 {
     var jobId = req.body.id;
-
+    var acceptId;
     acceptCreate((err, results) => 
     {
         if(err)
@@ -123,8 +123,9 @@ app.post('/accept', (req, res) =>
             for (var i =0; i < acceptResult.length; i++)
             {
                 console.log(acceptResult[i].id);
+                acceptId = acceptResult[i].id
             }
-            console.log(acceptResult[1].id);
+            console.log(acceptId);
             // updateJobAccept((err, result) => 
             // {
 
