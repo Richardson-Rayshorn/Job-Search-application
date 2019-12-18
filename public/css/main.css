@@ -6,7 +6,7 @@ body{
     background: white;
 }
 
-.app{
+#app{
     width: 90%;
     margin: auto;
 }
