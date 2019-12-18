@@ -190,6 +190,7 @@ function updateJobAccept(acceptId, jobId, callback)
 app.get('/acceptedJobs', (req, res) => 
 {
     res.write("Testing");
+    res.end();
     // console.log("test");
     // acceptedJobs((err, result) => 
     // {
@@ -205,21 +206,21 @@ app.get('/acceptedJobs', (req, res) =>
 });
 
 
-function acceptedJobs(callback) 
-{
-    var sql = "SELECT title, descriptions, salary FROM jobs"; 
-        sql += "WHERE accepts_id IS NOT NULL";
+// function acceptedJobs(callback) 
+// {
+//     var sql = "SELECT title, descriptions, salary FROM jobs"; 
+//         sql += "WHERE accepts_id IS NOT NULL";
 
-    pool.query(sql, function(err, result) 
-    {
-        if(err)
-        {
-            console.log(err);
-        }
-        callback(null, result.rows);
-    });
+//     pool.query(sql, function(err, result) 
+//     {
+//         if(err)
+//         {
+//             console.log(err);
+//         }
+//         callback(null, result.rows);
+//     });
 
-}
+// }
 
 app.listen(port);
 console.log("testing the server");
