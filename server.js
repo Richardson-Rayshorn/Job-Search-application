@@ -65,12 +65,11 @@ app.post('/postJobs', (req, res) =>
    var title = req.body.title;
    var desc = req.body.desc;
    var salary = req.body.salary;
-   var salaries = "$" + salary + " per month";
 
    console.log(title, desc, salary);
 //    res.write("testing");
 //    res.end();
-   postJobs(title,desc,salaries, (err, result) => 
+   postJobs(title,desc,salary, (err, result) => 
    {
         if(err)
         {
@@ -78,6 +77,7 @@ app.post('/postJobs', (req, res) =>
         }
 
         console.log(result);
+        res.end();
    });
 });
 
