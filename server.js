@@ -41,7 +41,7 @@ app.get('/listJobs', (req, res) =>
 
 function getJobs(callback) 
 {
-    var sql = "SELECT id, title, descriptions, salary FROM jobs";
+    var sql = "SELECT id, title, descriptions, salary FROM jobs WHERE accepts_id IS NULL";
 
     pool.query(sql, function(err, result) 
     {
@@ -172,9 +172,8 @@ function getAcceptId(callback)
 function updateJobAccept(acceptId, jobId, callback)
 {
     console.log(acceptId + " " + jobId);
-    var sql = "UPDATE jobs SET accepts_id=$1 WHERE jobs.id=($2)";
+    var sql = "UPDATE jobs SET accepts_id=$1 WHERE jobs.id=$2";
     var values = [acceptId, jobId];
-    console.log(sql);
     pool.query(sql, values, function(err, result) 
     {
         if(err)
