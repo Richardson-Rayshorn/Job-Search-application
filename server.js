@@ -187,5 +187,39 @@ function updateJobAccept(acceptId, jobId, callback)
 
 }
 
+app.get('/acceptedJobs', (req, res) => 
+{
+    // res.write("Testing");
+    // console.log("test");
+    acceptedJobs((err, result) => 
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        console.log(JSON.stringify(result));
+        var results = JSON.parse(JSON.stringify(result));
+        res.render('acceptjobs', {results});
+        res.end();
+    });
+});
+
+
+function acceptedJobs(callback) 
+{
+    var sql = "SELECT title, descriptions, salary FROM jobs"; 
+        sql += "WHERE accepts_id IS NOT NULL";
+
+    pool.query(sql, function(err, result) 
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        callback(null, result.rows);
+    });
+
+}
+
 app.listen(port);
 console.log("testing the server");
