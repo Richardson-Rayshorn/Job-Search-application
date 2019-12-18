@@ -148,7 +148,7 @@ function acceptCreate(callback)
 
 function getAcceptId(callback)
 {
-    var sql = "SELECT id from accepts ORDER BY id DESC LIMIT 1";
+    var sql = "SELECT id, accepted from accepts ORDER BY id DESC LIMIT 1";
 
     pool.query(sql, (err, results) =>
     {
