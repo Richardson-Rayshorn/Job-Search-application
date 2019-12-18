@@ -126,10 +126,13 @@ app.post('/accept', (req, res) =>
                 acceptId = acceptResult[i].id
             }
             console.log(acceptId);
-            // updateJobAccept((err, result) => 
-            // {
-
-            // });
+            updateJobAccept(acceptId, jobId, (err, result) => 
+            {
+                if (err)
+                {
+                    console.log(err);
+                }
+            });
         });
         res.end();
     });
@@ -161,6 +164,22 @@ function getAcceptId(callback)
         }
         callback(err, results.rows);
     });
+}
+
+function updateJobAccept(acceptId, jobId, callback)
+{
+    var sql = "UPDATE jobs SET accepts_id = $1 WHERE jobs.id = $2";
+    var values = [acceptId, jobId];
+
+    pool.query(sql, values, function(err, result) 
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        callback(null, result);
+    });
+
 }
 
 app.listen(port);
