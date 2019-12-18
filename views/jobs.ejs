@@ -5,15 +5,12 @@
                     <div class="card">
                         <form method="" action="">
                             <h4 class="card-title"><%= results[i].title %></h4>
-                            <input id="title" type="hidden" name="title" value="<%= results[i].title %>"/>
                             <p class="card-content"><%= results[i].descriptions %></p>
-                            <textarea id="descriptions" hidden name="descriptions" value="<%= results[i].descriptions %>"></textarea>
                             <p class="card-content">$<%= results[i].salary %> per month</p>
-                            <input id="salary" type="hidden" name="salary" value="<%= results[i].salary %>"/>
-                            <button type="submit" class="btn" onclick="acceptJobs(this)">Accept Job</button>
+                            <input id="jobid" type="hidden" name="jobid" value="<%= results[i].id %>"/>
+                            <button type="submit" class="btn">Accept Job</button>
                         </form>
                     </div>
                 </div>
-            
         <% } %>
     </div>

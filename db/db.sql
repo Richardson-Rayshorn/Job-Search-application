@@ -2,6 +2,7 @@ CREATE TABLE accepts
 (
     id SERIAL PRIMARY KEY,
     accepted BOOLEAN,
+    date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
 CREATE TABLE jobs 
@@ -10,7 +11,8 @@ CREATE TABLE jobs
     title VARCHAR(255) NOT NULL,
     descriptions TEXT NOT NULL,
     salary VARCHAR(255) NOT NULL,
-    accept_id INTEGER REFERENCES accepts
+    accepts_id INTEGER REFERENCES accepts,
+    date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
 INSERT INTO jobs (title, descriptions, salary) VALUES
