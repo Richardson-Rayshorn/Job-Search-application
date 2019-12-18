@@ -118,13 +118,14 @@ app.post('/accept', (req, res) =>
                 console.log(err);
             }
             console.log(JSON.stringify(result));
-            // var acceptResult = JSON.parse(JSON.stringify(result));
-        });
-        // for (var i = 0;)
-        // updateJobAccept((err, result) => 
-        // {
+            var acceptResult = JSON.parse(JSON.stringify(result));
 
-        // });
+            console.log(acceptResult);
+            // updateJobAccept((err, result) => 
+            // {
+
+            // });
+        });
         res.end();
     });
 });
