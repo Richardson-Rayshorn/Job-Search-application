@@ -101,7 +101,7 @@ function postJobs(title,desc,salaries, callback)
 
 app.post('/accept', (req, res) => 
 {
-    var jobId = req.body.id;
+    var jobId = req.params.jobid;
     var acceptId;
     acceptCreate((err, results) => 
     {
@@ -171,7 +171,7 @@ function getAcceptId(callback)
 function updateJobAccept(acceptId, jobId, callback)
 {
     console.log(acceptId + " " + jobId);
-    var sql = "UPDATE jobs SET accepts_id = ($1) WHERE jobs.id = ($2)";
+    var sql = "UPDATE jobs SET accepts_id=($1) WHERE jobs.id=($2)";
     var values = [acceptId, jobId];
     console.log(sql);
     pool.query(sql, values, function(err, result) 
