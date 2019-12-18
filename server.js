@@ -77,7 +77,7 @@ app.post('/postJobs', (req, res) =>
         }
 
         console.log(result);
-        res.render("/");
+        res.render("index");
         res.end();
    });
 });
