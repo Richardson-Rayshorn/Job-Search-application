@@ -132,6 +132,8 @@ app.post('/accept', (req, res) =>
                 {
                     console.log(err);
                 }
+
+                console.log(result);
             });
         });
         res.end();
