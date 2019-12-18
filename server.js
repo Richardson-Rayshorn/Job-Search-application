@@ -111,20 +111,21 @@ app.post('/accept', (req, res) =>
         }
         console.log(JSON.stringify(results));
         
-        getAcceptId((err, result) => 
-        {
-            if(err)
-            {
-                console.log(err);
-            }
-            console.log(JSON.stringify(result));
-            var acceptResult = JSON.parse(JSON.stringify(result));
-        });
+        // getAcceptId((err, result) => 
+        // {
+        //     if(err)
+        //     {
+        //         console.log(err);
+        //     }
+        //     console.log(JSON.stringify(result));
+        //     var acceptResult = JSON.parse(JSON.stringify(result));
+        // });
         // for (var i = 0;)
         // updateJobAccept((err, result) => 
         // {
 
         // });
+        res.end();
     });
 });
 
@@ -142,19 +143,19 @@ function acceptCreate(callback)
     });
 }
 
-function getAcceptId(callback)
-{
-    var sql = "SELECT id from accepts ORDER_BY id DESC LIMIT 1";
+// function getAcceptId(callback)
+// {
+//     var sql = "SELECT id from accepts ORDER_BY id DESC LIMIT 1";
 
-    pool.query(sql, (err, results) =>
-    {
-        if(err)
-        {
-            console.log(err);
-        }
-        callback(err, results);
-    });
-}
+//     pool.query(sql, (err, results) =>
+//     {
+//         if(err)
+//         {
+//             console.log(err);
+//         }
+//         callback(err, results);
+//     });
+// }
 
 app.listen(port);
 console.log("testing the server");
