@@ -124,6 +124,7 @@ app.post('/accept', (req, res) =>
             {
                 console.log(acceptResult[i].id);
             }
+            console.log(acceptResult[1].id);
             // updateJobAccept((err, result) => 
             // {
 
