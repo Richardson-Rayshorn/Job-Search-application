@@ -189,19 +189,19 @@ function updateJobAccept(acceptId, jobId, callback)
 
 app.get('/acceptedJobs', (req, res) => 
 {
-    // res.write("Testing");
+    res.write("Testing");
     // console.log("test");
-    acceptedJobs((err, result) => 
-    {
-        if(err)
-        {
-            console.log(err);
-        }
-        console.log(JSON.stringify(result));
-        var results = JSON.parse(JSON.stringify(result));
-        res.render('acceptjobs', {results});
-        res.end();
-    });
+    // acceptedJobs((err, result) => 
+    // {
+    //     if(err)
+    //     {
+    //         console.log(err);
+    //     }
+    //     console.log(JSON.stringify(result));
+    //     var results = JSON.parse(JSON.stringify(result));
+    //     res.render('acceptjobs', {results});
+    //     res.end();
+    // });
 });
 
 
