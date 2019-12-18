@@ -121,8 +121,8 @@ app.post('/accept', (req, res) =>
             var acceptResult = JSON.parse(JSON.stringify(result));
 
             console.log(acceptResult);
-            console.log({acceptResult}.id);
-            console.log(acceptResult.accepted);
+            console.log({acceptResult}[1].id);
+            console.log(acceptResult[1].accepted);
             // updateJobAccept((err, result) => 
             // {
 
