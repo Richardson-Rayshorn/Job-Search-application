@@ -135,10 +135,11 @@ app.post('/accept', (req, res) =>
                 }
 
                 console.log(result);
+                res.render("index");
+                res.end();
             });
         });
-        res.render("jobs");
-        res.end();
+        
     });
 });
 
