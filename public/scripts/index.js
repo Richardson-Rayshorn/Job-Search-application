@@ -67,6 +67,6 @@ function acceptJobs(e)
         }
     }
 
-    xmlhttp.open("GET","/acceptJobs",true);
+    xmlhttp.open("GET","/acceptedJobs",true);
     xmlhttp.send();
 }
