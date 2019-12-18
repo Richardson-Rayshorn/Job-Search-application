@@ -170,7 +170,7 @@ function getAcceptId(callback)
 
 function updateJobAccept(acceptId, jobId, callback)
 {
-    var sql = "UPDATE jobs SET accepts_id = $1 WHERE jobs.id = $2";
+    var sql = `UPDATE jobs SET accepts_id = ? WHERE jobs.id = ?`;
     var values = [acceptId, jobId];
 
     pool.query(sql, values, function(err, result) 
