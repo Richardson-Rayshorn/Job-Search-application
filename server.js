@@ -120,9 +120,10 @@ app.post('/accept', (req, res) =>
             console.log(JSON.stringify(result));
             var acceptResult = JSON.parse(JSON.stringify(result));
 
-            console.log(acceptResult);
-            console.log({acceptResult}[1].id);
-            console.log(acceptResult[1].accepted);
+            for (var i =0; i < acceptResult.length; i++)
+            {
+                console.log(acceptResult[i].id);
+            }
             // updateJobAccept((err, result) => 
             // {
 
