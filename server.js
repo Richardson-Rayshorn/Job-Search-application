@@ -110,8 +110,16 @@ app.post('/accept', (req, res) =>
             console.log(err);
         }
         console.log(JSON.stringify(results));
-        var acceptResult = JSON.parse(JSON.stringify(results));
-
+        
+        getAcceptId((err, result) => 
+        {
+            if(err)
+            {
+                console.log(err);
+            }
+            console.log(JSON.stringify(result));
+            var acceptResult = JSON.parse(JSON.stringify(result));
+        });
         // for (var i = 0;)
         // updateJobAccept((err, result) => 
         // {
@@ -123,7 +131,21 @@ app.post('/accept', (req, res) =>
 function acceptCreate(callback)
 {
     var sql = "INSERT INTO accepts (accepted) VALUES (TRUE)";
-    sql += "SELECT id from accepts ORDER_BY id DESC LIMIT 1";
+    
+    pool.query(sql, (err, results) =>
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        callback(err, results);
+    });
+}
+
+function getAcceptId(callback)
+{
+    var sql = "SELECT id from accepts ORDER_BY id DESC LIMIT 1";
+
     pool.query(sql, (err, results) =>
     {
         if(err)
