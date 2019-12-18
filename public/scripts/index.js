@@ -51,7 +51,7 @@ function listJobs()
     xmlhttp.send();
 }
 
-function acceptJobs(e)
+function acceptJobs()
 {
     // var title = document.getElementById("title").value;
     // var desc = document.getElementById("descriptions").value;
