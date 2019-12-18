@@ -208,8 +208,7 @@ app.get('/acceptedJobs', (req, res) =>
 
 function acceptedJobs(callback) 
 {
-    var sql = "SELECT title, descriptions, salary FROM jobs"; 
-        sql += "WHERE accepts_id IS NOT NULL";
+    var sql = "SELECT title, descriptions, salary FROM jobs WHERE accepts_id IS NOT NULL";
 
     pool.query(sql, function(err, result) 
     {
