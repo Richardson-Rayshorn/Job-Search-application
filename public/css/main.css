@@ -4,6 +4,9 @@ body{
 
 .container{
     background: white;
+}
+
+.app{
     width: 90%;
     margin: auto;
 }
