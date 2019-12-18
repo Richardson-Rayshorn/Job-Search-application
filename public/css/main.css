@@ -4,4 +4,6 @@ body{
 
 .container{
     background: white;
+    width: 90%;
+    margin: auto;
 }
